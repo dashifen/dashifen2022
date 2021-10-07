@@ -1,0 +1,39 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "name": "dashifen-2022",
+  "description": "A 2022 WordPress theme for dashifen.com.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dashifen/dashifen2022.git"
+  },
+  "author": "David Dashifen Kees <dashifen@dashifen.com>",
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.0",
+    "autoprefixer": "^10.3",
+    "axios": "^0.22",
+    "css-loader": "^6.3",
+    "cssnano": "^5.0",
+    "file-loader": "^6.0",
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2",
+    "gulp-postcss": "^9.0",
+    "gulp-rename": "^2.0",
+    "gulp-sass": "^5.0",
+    "gulp-sourcemaps": "^3.0",
+    "mini-css-extract-plugin": "^2.4.2",
+    "normalize.css": "^8.0",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1",
+    "vue": "^3.2",
+    "vue-loader": "^16.8",
+    "webpack": "^5.38",
+    "webpack-cli": "^4.7",
+    "yargs-parser": "^20.2"
+  },
+  "scripts": {
+    "watch": "webpack --env development --watch",
+    "build": "webpack --env production"
+  }
+}

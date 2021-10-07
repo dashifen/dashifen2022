@@ -1,0 +1,79 @@
+@use 'sass:math';
+
+@function rem($size) {
+  $remSize: math.div($size, 20px);
+  @return #{$remSize}rem;
+}
+
+@mixin atFullSize {
+  @media only screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin onWideScreens {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onScreens {
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onTablets {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin adminBarBreakpoint {
+  @media only screen and (max-width: 782px) {
+    @content;
+  }
+}
+
+@mixin onLandscape {
+  @media only screen and (min-width: 500px) {
+    @content;
+  }
+}
+
+@mixin onMobile {
+  @media only screen and (max-width: 499px) {
+    @content;
+  }
+}
+
+%visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  white-space: nowrap;
+}
+
+%visually-hidden-with-focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
+}
+
+.visually-hidden {
+  @extend %visually-hidden;
+}
+
+.visually-hidden:focus,
+.visually-hidden:active {
+  @extend %visually-hidden-with-focus;
+}

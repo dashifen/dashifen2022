@@ -1,0 +1,26 @@
+{
+  "name": "dashifen/dashifen2022",
+  "description": "A 2022 WordPress theme for dashifen.com.",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "David Dashifen Kees",
+      "email": "dashifen@dashifen.com.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Dashifen\\Dashifen2022\\": "src"
+    }
+  },
+  "require": {
+    "dashifen/wp-handler": "^10.10",
+    "dashifen/wp-templates": "^4.1",
+    "timber/timber": "^1.19"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  }
+}
