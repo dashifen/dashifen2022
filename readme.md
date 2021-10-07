@@ -1,3 +1,3 @@
 # Dashifen2022
 
-A 2022 theme for dashifen.com.
+A 2022 WordPress theme for dashifen.com.
