@@ -1,8 +1,9 @@
 {
+  "license": "MIT",
   "name": "dashifen/dashifen2022",
   "description": "A 2022 WordPress theme for dashifen.com.",
   "minimum-stability": "stable",
-  "license": "proprietary",
+  "type": "wordpress-theme",
   "authors": [
     {
       "name": "David Dashifen Kees",

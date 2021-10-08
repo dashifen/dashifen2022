@@ -1,14 +1,11 @@
 <!doctype html>
 <html class="no-js" <?php language_attributes() ?>>
 <head>
-  <title><?php apply_filters('dashifen2022-title', 'Dashifen.com') ?></title>
-
   <meta charset="utf-8">
+  <title><?php apply_filters('dashifen2022-title', 'Dashifen.com') ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <?php wp_head(); ?>
 </head>
 <body <?php body_class() ?>>
