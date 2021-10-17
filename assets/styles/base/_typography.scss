@@ -1,0 +1,30 @@
+@use 'sass:math';
+
+@mixin type( $font-size: null, $line-height: null ) {
+  @if $font-size {
+    font-size: rem($font-size);
+  }
+
+  @if $line-height {
+    @if not $font-size {
+      $font-size: $browser-base-size
+    }
+
+    line-height: math.div(math.div( $line-height, $font-size) * 10000, 10000);
+  }
+}
+
+%font-smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$base-text: $browser-base-size;
+$base-text-double: $base-text * 2;
+$base-text-half: math.div($base-text, 2);
+$base-text-fourth: math.div($base-text, 4);
+
+$fontHeading: 'El Messiri', sans-serif;
+$fontBody: 'Roboto', sans-serif;

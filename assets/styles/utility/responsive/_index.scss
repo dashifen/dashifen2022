@@ -1,0 +1,42 @@
+%responsive {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.responsive {
+  &-wrap {
+    @extend %responsive;
+  }
+
+  img,
+  svg,
+  ifram {
+    object-fit: cover;
+    max-width: 100%;
+  }
+
+  &-embed {
+    --embed-ratio: inherit;
+    aspect-ratio: var(--embed-ratio);
+
+    &-1-1 {
+      --embed-ratio: 1;
+    }
+
+    &-4-3 {
+      --embed-ratio: 4/3;
+    }
+
+    &-16-9 {
+      --embed-ratio: 16/9;
+    }
+
+    &-16-10 {
+      --embed-ratio: 16/10;
+    }
+
+    &-21-9 {
+      --embed-ratio: 21/9;
+    }
+  }
+}

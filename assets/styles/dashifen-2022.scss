@@ -1,28 +1,4 @@
-@import "framework/mixins";
-@import "framework/variables";
-
-// by including this CSS file without the file extension, the SASS compiler
-// will simply cram the CSS at the top of our resulting bundle.  this makes
-// sure that everything is normalized first and then we can mess with those
-// baseline styles.
-
-@import "../../node_modules/normalize.css/normalize";
-@import "framework/base";
-
-// the following are the imports that define the sections of our site.  each is
-// named to try and help identify the part of it that it controls.  they don't
-// have to be included in rough document order but it's a handy logic to use
-// for us humans even if a browser (probably) doesn't care.
-
-#site-title {
-  background: $gray;
-  color: $white;
-  font-size: 2rem;
-  margin: 0;
-  text-align: center;
-}
-
-// we include the WordPress styles last so that the styles that it expects
-// will have precedence over other stuff.
-
-@import "framework/wordpress";
+@import 'base';
+@import 'color';
+@import 'utility';
+@import 'text';

@@ -1,0 +1,48 @@
+
+// creates classes in the form of .has-COLOR-background-color
+
+@mixin colorBackground(
+  $colorsBg: $colors,
+  $colorsLink: [ $link-text, $link-text-hover ],
+  $prefix: '.has-',
+  $suffix: '-background-color'
+) {
+  @each $color, $value in $colorsBg {
+    #{$prefix}#{$color}#{$suffix} {
+      background-color: $value;
+
+      a:not([class*=button]) {
+        color: nth($colorsLink, 1);
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: nth($colorsLink, 2);
+        }
+      }
+    }
+  }
+};
+
+// creates classes in the form of .has-COLOR-color
+
+@mixin colorText(
+  $colors: $colors,
+  $colorsLink: $link-text-hover,
+  $prefix: '.has-',
+  $suffix: '-color'
+) {
+  @each $color, $value in $colors {
+    #{$prefix}#{$color}#{$suffix} {
+      color: $value;
+
+      @at-root a#{&} {
+        &:hover,
+        &:focus,
+        &:active {
+          color: $colorsLink;
+        }
+      }
+    }
+  }
+}

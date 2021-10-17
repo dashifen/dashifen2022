@@ -1,0 +1,25 @@
+@import 'color-functions';
+
+$colors: (
+  'black': #121212,
+  'white': #ffffff,
+  'gray': #ebe7f4,
+  'purple': #623c62,
+  'lilac': #bdb5d5,
+  'moss': #005051
+);
+
+$black: map-get($colors, 'black');
+$white: map-get($colors, 'white');
+$gray: map-get($colors, 'gray');
+$purple: map-get($colors, 'purple');
+$lilac: map-get($colors, 'lilac');
+$moss: map-get($colors, 'moss');
+
+$body-bg: $white;
+$body-text: $black;
+
+$link-text: $purple;
+$link-text-hover: $moss;
+
+@import 'color-mixins';

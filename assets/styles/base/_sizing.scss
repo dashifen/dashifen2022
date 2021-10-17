@@ -1,0 +1,20 @@
+@use 'sass:math';
+
+$browser-base-size: 20;
+
+@function rem($px) {
+  @return math.div($px, $browser-base-size) * 1rem;
+}
+
+$breakpoints: (
+  xs: 500px,
+  sm: 768px,
+  md: 1024px,
+  lg: 1200px,
+  xl: 1600px,
+  xx: 1800px
+) !default;
+
+$width-max: map-get($breakpoints, 'xx');
+$content-min: rem(270);
+$content-max: 85ch;

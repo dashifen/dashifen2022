@@ -1,0 +1,31 @@
+@use 'sass:math';
+
+blockquote {
+  @include margin(0 0 rem($base-text-double) 0);
+  @include padding(null null null rem($base-text));
+  border-left: rem(math.div($base-text, 4)) solid $black;
+
+  cite {
+    @extend %text-small;
+    font-style: normal;
+    letter-spacing: rem(1);
+  }
+
+  aside > &,
+  figure > & {
+    @include margin(0);
+    @include padding(rem(80) 5vw);
+    background-size: auto 65%;
+    border-left: 0;
+
+    p {
+      @include type(22);
+      font-style: italic;
+      font-family: $fontHeading;
+
+      @include media('>=sm') {
+        @include type(26);
+      }
+    }
+  }
+}

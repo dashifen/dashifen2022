@@ -1,0 +1,27 @@
+%text-small {
+  @include type(16, 32);
+}
+
+%text-large {
+  @include type(25, 32);
+}
+
+%text-extra-large {
+  @include type(30, 36);
+}
+
+.is-style {
+  &-text {
+    &-small {
+      @extend %text-small;
+    }
+
+    &-large {
+      @extend %text-large;
+    }
+
+    &-extra-large {
+      @extend %text-extra-large;
+    }
+  }
+}

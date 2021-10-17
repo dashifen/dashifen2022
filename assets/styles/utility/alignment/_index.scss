@@ -1,0 +1,42 @@
+%text-center {
+  text-align: center;
+}
+
+%text-right {
+  text-align: right;
+}
+
+.has-text-align {
+  &-center {
+    @extend %text-center;
+  }
+
+  &-right {
+    @extend %text-right;
+  }
+}
+
+// float alignments should only work on larger screen sizes.  if things are
+// too small, then the text gets squeezed by the floating element.
+
+%align-left {
+  @include media('>=lg') {
+    float: left;
+    @include margin(rem($base-text-half) rem($base-text) rem($base-text) 0);
+  }
+}
+
+%align-right {
+  @include media('>=lg') {
+    float: right;
+    @include margin(rem($base-text-half) 0 rem($base-text) rem($base-text));
+  }
+}
+
+.align-left {
+  @extend %align-left;
+}
+
+.align-right {
+  @extend %align-right;
+}

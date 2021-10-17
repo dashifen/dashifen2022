@@ -1,0 +1,34 @@
+a {
+  --line-size: max(2px, 0.1em);
+  --outline-size: max( #{ rem(3) }, 0.08em );
+  --outline-style: solid;
+  --outline-color: #{$moss};
+
+  transition: all 0.3s ease;
+  color: $link-text;
+  text-decoration: underline;
+  text-decoration-thickness: var(--line-size);
+  text-underline-offset: inherit;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $link-text-hover;
+  }
+
+  &:focus,
+  &:active {
+    outline: var(--outline-size) var(--outline-style) var(--outline-color);
+    outline-offset: var(--line-size);
+    text-decoration: none;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: var(--outline-size) var(--outline-style) var(--outline-color);
+    outline-offset: var(--outline-size);
+  }
+}

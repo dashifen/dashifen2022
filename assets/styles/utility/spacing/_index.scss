@@ -1,0 +1,25 @@
+:is([class*=wp-block]) {
+  margin-block: 0;
+}
+
+.is-style {
+  &-with-margin-bottom {
+    margin-block-end: rem($base-text-double);
+  }
+
+  &-with-no-margin-bottom {
+    margin-block-end: 0;
+  }
+
+  &-with-margin-top {
+    margin-block-start: rem($base-text-double);
+  }
+
+  &-with-no-margin-top {
+    margin-block-start: 0;
+  }
+
+  &-with-no-margin {
+    margin-block: 0;
+  }
+}
