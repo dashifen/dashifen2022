@@ -13,7 +13,7 @@ const css = async function () {
     .pipe(sourcemaps.init())
     .pipe(sass())
     //.pipe(postcss([autoPrefixer(), cssNano()]))
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write(''))
     .pipe(dest('assets/'));
 };
 

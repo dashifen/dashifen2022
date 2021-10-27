@@ -17,7 +17,7 @@
   },
   "require": {
     "dashifen/wp-handler": "^10.10",
-    "dashifen/wp-templates": "^4.1",
+    "dashifen/wp-templates": "^5.0",
     "timber/timber": "^1.19"
   },
   "config": {
