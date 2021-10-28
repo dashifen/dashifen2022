@@ -1,0 +1,12 @@
+<header class="banner has-purple-background-color has-padding-left has-padding-right" role="banner" aria-labelledby="page-title">
+  {% block banner %}
+    <a href="#main-menu" class="has-lilac-color hamburger" aria-label="open main menu" aria-controls="main-menu"></a>
+    <h1 id="page-title" class="is-text-large has-lilac-color has-no-margin has-padding-top has-padding-bottom">David Dashifen Kees</h1>
+    <img class="logo" alt="{{ site.logo.alt }}" src="{{ site.images ~ site.logo.src }}">
+    {% include "@partials/menu.twig" with {
+      'menu'  : menus.main,
+      'id'    : 'main-menu',
+      'label' : 'Main Menu'
+    } %}
+  {% endblock %}
+</header>

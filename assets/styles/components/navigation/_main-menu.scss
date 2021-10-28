@@ -1,0 +1,111 @@
+#main-menu {
+  display: none;
+
+  &:target,
+  &[aria-expanded=true] {
+    display: block;
+  }
+
+  @include media('>=md') {
+    display: block;
+  }
+}
+
+#main-menu:target #main-menu-close,
+#main-menu[aria-expanded=true] #main-menu-close {
+  cursor: pointer;
+  display: inline-block;
+  height: rem($toggle-width);
+  position: absolute;
+  left: rem(375 - $toggle-width - $base-text);
+  top: rem($base-text-half);
+  width: rem($toggle-width);
+  z-index: 1001;
+
+  &:before,
+  &:after {
+    border-top: $toggle-line-size solid $lilac;
+    content: '';
+    display: inline-block;
+    width: rem($toggle-width);
+  }
+
+  &:before {
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    bottom: rem(24);
+    transform: rotate(45deg);
+    position: relative;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline-color: $white;
+    outline-width: rem(1);
+
+    &, &::before, &::after {
+      border-color: $white;
+    }
+  }
+}
+
+#main-menu:target .menu,
+#main-menu[aria-expanded=true] .menu {
+  @extend %text-medium;
+  left: 0;
+  height: 100%;
+  max-width: rem(375);
+  position: absolute;
+  top: rem($base-text-double);
+  width: rem(375);
+  z-index: 1000;
+
+  .menu-item {
+    color: $lilac;
+    display: inline-block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    width: 100%;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $gray;
+      color: $moss;
+      outline: none;
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+#main-menu:target .backdrop,
+#main-menu[aria-expanded=true] .backdrop {
+  background: $black;
+  cursor: default;
+  display: block;
+  left: 0;
+  height: 100%;
+  max-width: rem(375);
+  position: absolute;
+  top: 0;
+  width: rem(375);
+  z-index: 999;
+}
+
+@supports(position: fixed) {
+  #main-menu:target .backdrop,
+  #main-menu[aria-expanded=true] .backdrop {
+    position: fixed;
+  }
+}

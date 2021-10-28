@@ -1,0 +1,9 @@
+.menu {
+  @include margin(0);
+  @include padding(0);
+}
+
+.submenu {
+  @include margin(0);
+  @include padding(0 0 0 rem($base-text));
+}

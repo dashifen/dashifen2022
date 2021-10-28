@@ -1,0 +1,34 @@
+{% if isSubmenu is not defined %}
+  <nav class="menu-container" id="{{ id }}"
+    {% if label == 'Main Menu' %}
+      aria-expanded="false"
+    {% endif %}
+  >
+    {% if label == 'Main Menu' %}
+      <a href="#main-menu-toggle" id="main-menu-close" aria-label="close main menu" aria-controls="main-menu"></a>
+    {% endif %}
+{% endif %}
+
+  <ul class="{{ isSubmenu ? 'submenu' : 'menu' }}" {% if isSubmenu is not defined %} aria-label="{{ label }}" {% endif %}>
+    {% for item in menu %}
+      <li>
+        <a class="menu-item {{ item.classes|join(' ') }} has-lilac-color"
+          data-current="{{ item.current ? 'current' : 'not-current' }}"
+          href="{{ item.url }}">{{ item.label }}</a>
+
+        {% if item.children | length > 0 %}
+          {% include '@partials/menu.twig' with {
+            menu: item.children,
+            isSubmenu: 1
+          } %}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+{% if isSubmenu is not defined %}
+    {% if label == 'Main Menu' %}
+      <a href="#main-menu-toggle" class="backdrop" tabindex="-1" aria-hidden="true" hidden></a>
+    {% endif %}
+  </nav>
+{% endif %}

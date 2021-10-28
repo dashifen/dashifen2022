@@ -3,6 +3,7 @@
 // sure that everything is normalized first and then we can mess with those
 // baseline styles.
 
+@import '../../../node_modules/the-new-css-reset/css/reset';
 @import '../../../node_modules/normalize.css/normalize';
 @import '../../../node_modules/include-media/dist/include-media';
 @import '../../../node_modules/bourbon/core/bourbon';

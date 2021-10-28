@@ -1,38 +1,12 @@
-{% set stylesheet = function('get_stylesheet_directory_uri') %}
+{% extends '@layout/base.twig' %}
 
-<!doctype html>
-<html class="no-js" {{ function('language_attributes') }}>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="icon" href="{{ stylesheet }}/assets/images/witch-hat.png">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  {{ function('wp_head') }}
-</head>
-<body {{ function('body_class') }}>
-<a href="#content" class="screen-reader-text">Skip to the Content</a>
-<header id="banner" role="banner">
-  <div id="purple-band">
-    <h1 id="page-title">David Dashifen Kees</h1>
-    <div id="logo">
-      <img alt="a witch's hat with a purple band and a gold buckle"
-        src="{{ stylesheet }}/assets/images/witch-hat.png">
-    </div>
-  </div>
+{% block content %}
+
+<header>
+  <p id="entry-title">Welcome to my corner of the Internet.</p>
 </header>
 
-<main id="content" class="main" aria-labelledby="entry-title">
-  <header>
-    <p id="entry-title">Welcome to my corner of the Internet.</p>
-  </header>
 
 
-</main>
 
-<footer class="footer"></footer>
-
-{{ function('wp_footer') }}
-</body>
-</html>
+{% endblock %}

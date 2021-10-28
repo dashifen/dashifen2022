@@ -1,0 +1,28 @@
+html {
+  font-size: 125%;              // 16px * 125% = 20px
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+body {
+  @extend %font-smooth;
+  @include margin(0);
+  @include padding(0);
+  @include type(16);
+
+  background-color: $body-bg;
+  color: $body-text;
+  font-family: $fontBody;
+  height: min(100vh, 100%);
+  max-width: $width-max;
+  min-width: $width-min;
+  width: min(100vw, 100%);
+
+  @include media('>=md') {
+    @include type($base-text);
+  }
+}
+
+a:hover {
+  cursor: pointer;
+}

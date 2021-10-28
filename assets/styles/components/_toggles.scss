@@ -1,0 +1,34 @@
+.hamburger {
+  border-top: $toggle-line-size solid $lilac;
+  border-bottom: $toggle-line-size solid $lilac;
+  cursor: pointer;
+  display: inline-block;
+  height: rem($toggle-width);
+  position: absolute;
+  top: rem(50);
+  width: rem($toggle-width);
+
+  &::before {
+    border-top: $toggle-line-size solid $lilac;
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: rem(4.5);              // eyeballed
+    width: rem($toggle-width);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline-color: $white;
+    outline-width: rem(1);
+
+    &, &::before {
+      border-color: $white;
+    }
+  }
+
+  @include media('>=md') {
+    display: none;
+  }
+}

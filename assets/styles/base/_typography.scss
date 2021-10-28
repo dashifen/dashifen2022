@@ -2,6 +2,10 @@
 
 @mixin type( $font-size: null, $line-height: null ) {
   @if $font-size {
+    @if not $line-height {
+      $line-height: $font-size * 1.5;
+    }
+
     font-size: rem($font-size);
   }
 
@@ -22,6 +26,7 @@
 }
 
 $base-text: $browser-base-size;
+$base-text-plus-fifty: $base-text * 1.5;
 $base-text-double: $base-text * 2;
 $base-text-half: math.div($base-text, 2);
 $base-text-fourth: math.div($base-text, 4);

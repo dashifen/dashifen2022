@@ -1,0 +1,9 @@
+.banner {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  position: relative;
+
+  @include media('>=md') {
+    grid-template-columns: 1fr 120px 1fr;
+  }
+}

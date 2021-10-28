@@ -1,27 +1,31 @@
 %text-small {
-  @include type(16, 32);
+  @include type($base-text-half, 30);
+}
+
+%text-medium {
+  @include type($base-text, 30);
 }
 
 %text-large {
-  @include type(25, 32);
+  @include type($base-text-double, 60);
 }
 
-%text-extra-large {
-  @include type(30, 36);
-}
-
-.is-style {
+.is {
   &-text {
     &-small {
       @extend %text-small;
     }
 
-    &-large {
-      @extend %text-large;
+    &-medium {
+      @extend %text-medium
     }
 
-    &-extra-large {
-      @extend %text-extra-large;
+    &-large {
+      @include type($base-text-plus-fifty, 40);
+
+      @include media('>=md') {
+        @include type($base-text-double, 60);
+      }
     }
   }
 }
